@@ -4,11 +4,11 @@ const userForm = new UserForm();
 console.log(userForm);
 
 userForm.loginFormCallback = (data) => {
-    ApiConnector.login(data, (i) => {
-        if (i.success) {
+    ApiConnector.login(data, (res) => {
+        if (res.success) {
             location.reload();
         } else {
-            userForm.setLoginErrorMessage(i.error);
+            userForm.setLoginErrorMessage(res.error);
         }
     });
 };
@@ -16,11 +16,11 @@ userForm.loginFormCallback = (data) => {
 console.log(userForm);
 
 userForm.registerFormCallback = (data) => {
-    ApiConnector.register(data, (i) => {
-        if (i.success) {
+    ApiConnector.register(data, (res) => {
+        if (res.success) {
             location.reload();
         } else {
-            userForm.setLoginErrorMessage(i.error);
+            userForm.setLoginErrorMessage(res.error);
         }
     });
 };
